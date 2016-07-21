@@ -1,4 +1,4 @@
-// noiseometer test code by Mike Machado <mike@makerhq.org>
+// I replaced the comment.
 //
 
 
