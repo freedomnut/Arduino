@@ -7,12 +7,12 @@ int TryOtherWifi = 0;
 void setup() {
   Serial.begin(9600);
   Serial.println("Checking 2WIRE connectivity...");
-  WiFi.begin("2WIRE518", "4135157320");
+  WiFi.begin("2WIRE518", "4135157230");
   delay(5000);
 
   if(WiFi.status() != WL_CONNECTED) {
     Serial.println("2WIRE connection unsuccessful.");
-    WiFi.disconnect;
+    WiFi.disconnect();
     TryOtherWifi = 1;
   }
   else {
@@ -26,7 +26,7 @@ void setup() {
 
     if (WiFi.status() != WL_CONNECTED) {
       Serial.println("MakerHQ connection unsuccessful.");
-      WiFi.disconnect;
+      WiFi.disconnect();
     }
     else {
       Serial.println("MakerHQ connection sucessful!");
