@@ -7,8 +7,8 @@
 #include <MQTTClient.h>
 
 
-char *ssid = "wifi";
-char *pass = "pass";
+const char *ssid = "2WIRE518";
+const char *pass = "4135157230";
 
 #define SOUND_PIN A0
 
@@ -59,14 +59,14 @@ void connect() {
   }
 
   Serial.print("\nconnecting...");
-  while (!client.connect("AIO_USER", "AIO_USER", "AIO_PASS")) {
+  while (!client.connect("freedom_nut", "freedom_nut", "e7032e34a3b6453c962b2f57a7205304")) {
     Serial.print(".");
     delay(1000);
   }
 
   Serial.println("\nconnected!");
 
-//  client.subscribe("AIO_USER/f/noiseometer");
+//  client.subscribe("freedom_nut/f/noiseometer");
 }
 
 void loop() {
@@ -130,7 +130,7 @@ void send_report() {
   Serial.print("Sending ");
   Serial.print(String(report_values[0]));
   Serial.println(" to mqtt");
-  client.publish("AIO_USER/f/noiseometer", String(report_values[0]));
+  client.publish("freedom_nut/f/noiseometer", String(report_values[0]));
 }
 
 void sort(int a[], int size) {
