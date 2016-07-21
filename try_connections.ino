@@ -3,6 +3,7 @@
 
 int status = WL_IDLE_STATUS;     // the Wifi radio's status
 int TryOtherWifi = 0;
+int Connected = 0;
 
 void setup() {
   Serial.begin(9600);
@@ -30,18 +31,31 @@ void setup() {
   //  }
   //}
 
+  Connected = ConnectWiFi();
+  if (Connected == 1) {
+    Serial.println ("WiFi connection made.  We're ready to run!");
+  }
+  else {
+    Serial.println ("WiFi connection couldn't be made, which is double plus ungood.");
+  }
+}
+
+int ConnectWiFi() {
+  int result = 0;
   TryOtherWifi = TryWiFi("2WIRE518", "4135157230");
   if (TryOtherWifi == 1) {
     TryOtherWifi = TryWiFi("MakerHQ", "sacramentomaker916");
   };
   if (TryOtherWifi == 0) {
     Serial.print ("WiFi connection made.");
+    result = 0;
   }
   else {
     Serial.print ("WiFi connection could not be made.");
-  }
+    result = 1;
+  }  
+  return result;
 }
-
 int TryWiFi(char ssid, char pass) {
   int result = 0;
   Serial.println("Trying " + ssid + " wifi connectivity...");
