@@ -8,7 +8,7 @@ int Connected = 0;
 void setup() {
   Serial.begin(9600);
   //Serial.println("Checking 2WIRE connectivity...");
-  //WiFi.begin("2WIRE518", "4135157230");
+  //WiFi.begin("2WIRE518", "0000000000");
   //delay(5000);
   //if(WiFi.status() != WL_CONNECTED) {
   //  Serial.println("2WIRE connection unsuccessful.");
