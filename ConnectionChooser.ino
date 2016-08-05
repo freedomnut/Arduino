@@ -33,7 +33,7 @@ void GetConnected() {
 }
 
 void TryHomeWifi() {
-  TryWifi("2WIRE518", "4135157230");
+  TryWifi("2WIRE518", "000000000");
 }
 void TryMakerWifi() {
   TryWifi("MakerHQ", "sacramentomaker916");
