@@ -8,7 +8,7 @@
 
 
 const char *ssid = "2WIRE518";
-const char *pass = "4135157230";
+const char *pass = "0000000000";
 
 #define SOUND_PIN A0
 
