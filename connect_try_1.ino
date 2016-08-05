@@ -2,7 +2,7 @@
 #include <WiFi101.h>
 
 char ssid[] = "2WIRE518";     //  your network SSID (name)
-char pass[] = "4135157230";  // your network password
+char pass[] = "0000000000";  // your network password
 int status = WL_IDLE_STATUS;     // the Wifi radio's status
   int WifiAttempt;
 
